@@ -1,28 +1,35 @@
 #ifndef ITEM_TO_PURCHASE_H
 #define ITEM_TO_PURCHASE_H
 
+
 #include <string>
 using namespace std;
 
 class ItemToPurchase {
+   
    public:
-      void SetDescription(string desc); 
-      string GetDescription(); 
-      void SetName(string name); 
-      string GetName();
+      ItemToPurchase();
+      ItemToPurchase(string name, string description, int price, int quantity = 0);
+      
+      void SetName(string name);
+      void SetDescription(string description);
       void SetPrice(int price);
-      int GetPrice();
-      void SetQuantity(int quant);
-      int GetQuantity();
+      void SetQuantity(int quantity);
+      
+      string GetName() const;
+      string GetDescription() const;
+      int GetPrice() const;
+      int GetQuantity() const;
+      
       void PrintItemCost();
       void PrintItemDescription();
-      ItemToPurchase(string name, string desc, int price, int quant);
-      ItemToPurchase();
+   
    private:
-      string itemDescription;
       string itemName;
+      string itemDescription;
       int itemPrice;
       int itemQuantity;
 };
+
 
 #endif
